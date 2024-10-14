@@ -14,3 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.getElementById('upload-btn').addEventListener('click', function() {
+    document.getElementById('orden-medica').click();
+});
+
+document.getElementById('appointment-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Turno agendado con éxito!');
+});
