@@ -23,3 +23,7 @@ document.getElementById('appointment-form').addEventListener('submit', function(
     event.preventDefault();
     alert('Turno agendado con éxito!');
 });
+
+function redirectTo(page) {
+    window.location.href = page;
+}

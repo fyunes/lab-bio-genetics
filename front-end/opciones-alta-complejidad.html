@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioGenetics - Alta Complejidad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="BioGenetics Logo">
+            <span class="brand-name">BioGenetics</span>
+        </div>
+        <nav>
+            <div class="user-menu">
+                <img src="img/icon.png" alt="User Icon" class="user-icon">
+                <div class="dropdown-menu">
+                    <a href="#" class="logout-btn">Cerrar Sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+  <section class="main-section">
+    <h1>Alta Complejidad</h1>
+    <h2>Escoja la práctica</h2>
+
+    <div class="practices">
+        <div class="option" onclick="redirectTo('alta-complejidad.html')" data-value="citogenetica">Citogenética</div>
+        <div class="option" onclick="redirectTo('alta-complejidad.html')" data-value="diagnostico-prenatal">Diagnóstico prenatal</div>
+        <div class="option" onclick="redirectTo('alta-complejidad.html')" data-value="fish">Hibridación In Situ (FISH)</div>
+        <div class="option" onclick="redirectTo('alta-complejidad.html')" data-value="biologia-molecular">Biología Molecular</div>
+        <div class="option" onclick="redirectTo('alta-complejidad.html')" data-value="citometria-flujo">Citometría de flujo</div>
+    </div>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
