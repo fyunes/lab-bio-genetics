@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta Complejidad - BioGenetics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="BioGenetics Logo">
+            <span class="brand-name">BioGenetics</span>
+        </div>
+        <nav>
+            <div class="user-menu">
+                <img src="img/icon.png" alt="User Icon" class="user-icon">
+                <div class="dropdown-menu">
+                    <a href="#" class="logout-btn">Cerrar Sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <main class="main-content">   
+            <h1>Análisis Bioquímicos</h1>
+
+            <div class="form-container">
+                <h2>Agende su turno</h2>
+                <form id="appointment-form">
+                    <input type="text" id="obra-social" name="obra-social" placeholder="Obra Social" required>
+                    <br>
+                    <br>
+                    <input type="text" id="numero-afiliado" name="numero-afiliado" placeholder="Número de afiliado de la Obra Social" required>
+                    <br>
+                    <br>
+                    <div class="file-upload">
+                        <input type="file" id="orden-medica" name="orden-medica" class="input-centrado" placeholder="Orden médica" accept=".pdf,.jpg,.png" required>
+                        <button type="button" id="upload-btn">Adjuntar</button>
+                    </div>
+                    <br>
+                    <input type="date" id="fecha" placeholder="Fecha" name="fecha" required>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn">AGENDAR</button>
+                </form>
+            </div>
+        </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
