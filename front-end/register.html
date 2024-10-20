@@ -10,7 +10,7 @@
 
 <header>
     <div class="logo-container">
-        <a href="index.html">
+        <a href="loginUsuario.html">
             <img src="img/logo.png" alt="BioGenetics Logo">
         </a>
         <span class="brand-name">BioGenetics</span>
@@ -19,9 +19,10 @@
 
 <div class="container">
     <div class="register-box">
-        <form>
+        <form method="POST" action="../back-end/registrer.php">
             <input type="text" name="nombre" placeholder="Nombre" required>
             <input type="text" name="apellido" placeholder="Apellido" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
             <input type="text" name="sexo" placeholder="Sexo" required>
             <input type="text" name="dni" placeholder="DNI" required>
             <input type="date" name="fecha-nacimiento" placeholder="Fecha de nacimiento" required>
@@ -30,7 +31,7 @@
             <button type="submit">REGISTRARSE</button>
         </form>
         <div class="login-link">
-            ¿Ya está registrado? <a href="index.html">Inicie sesión aquí</a>
+            ¿Ya está registrado? <a href="loginUsuario.html">Inicie sesión aquí</a>
         </div>
     </div>
 </div>

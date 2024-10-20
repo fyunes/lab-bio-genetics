@@ -1,3 +1,12 @@
+// LOGIN: Mostrar un mensaje de error si el inicio de sesión falla
+
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('error') && urlParams.get('error') === 'login_failed') {
+    alert('Usuario o contraseña incorrectos');}
+
+
+// MENÚ DESPLEGABLE CIERRE DE SESIÓN 
+
 document.addEventListener('DOMContentLoaded', function () {
     const userIcon = document.querySelector('.user-icon');
     const userMenu = document.querySelector('.user-menu');
@@ -27,3 +36,7 @@ document.getElementById('appointment-form').addEventListener('submit', function(
 function redirectTo(page) {
     window.location.href = page;
 }
+
+
+
+
