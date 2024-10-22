@@ -10,8 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Intentar iniciar sesión
     if ($auth->login($email, $password)) {
-        header("Location: ../front-end/turnos.html"); // Redirigir al dashboard en caso de éxito
-        exit();
+        if($email==="admin@admin.com"){
+            header("Location: ../front-end/admin.html"); // Redirigir al dashboard en caso de éxito
+        }else{
+            header("Location: ../front-end/turnos.html"); // Redirigir al dashboard en caso de éxito
+        }
     } else {
         // Redirigir a index.html si el login falla
         header("Location: ../front-end/loginUsuario.html?error=login_failed");

@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "sistema_usuarios");
+$conn = new mysqli("localhost", "root", "", "laboratorio_medico");
 
 if ($conn->connect_error)
 {

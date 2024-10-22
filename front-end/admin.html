@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - BioGenetics</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="BioGenetics Logo">
+            <span class="brand-name">BioGenetics</span>
+        </div>
+        <nav>
+            <div class="user-menu">
+                <img src="img/icon.png" alt="User Icon" class="user-icon">
+                <div class="dropdown-menu">
+                    <a href="../back-end/logout.php" class="logout-btn">Cerrar Sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="login-box">
+            <h2>AGREGAR OBRA SOCIAL</h2>
+            <p>Para agregar una obra social, ingrese el nombre de la misma</p>
+            <form action="../back-end/addObraSocial.php" method="POST">
+                <input type="text" name="nombre_obra_social" placeholder="Nombre de la Obra Social" required>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>

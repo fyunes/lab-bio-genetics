@@ -28,13 +28,40 @@
             <input type="date" name="fecha-nacimiento" placeholder="Fecha de nacimiento" required>
             <input type="tel" name="telefono" placeholder="Número de teléfono" required>
             <input type="email" name="email" placeholder="Correo electrónico" required>
+            
+            <label for="obra-social">Seleccione su obra social</label>
+            <select name="obra_social" id="obra-social" required>
+                <option value="">Seleccione una obra social</option>
+                <?php
+                    require '../back-end/classes/db.php';
+
+                    $sql = "SELECT id, nombre FROM obras_sociales";
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<option value="' . $row['id'] . '">' . $row['nombre'] . '</option>';
+                        }
+                    } else {
+                        echo '<option value="">No hay obras sociales disponibles</option>';
+                    }
+
+                    mysqli_close($conn);
+                ?>
+            </select>
             <button type="submit">REGISTRARSE</button>
         </form>
+
         <div class="login-link">
             ¿Ya está registrado? <a href="loginUsuario.html">Inicie sesión aquí</a>
         </div>
     </div>
 </div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
+
 
 <script src="scripts.js"></script>
 </body>
