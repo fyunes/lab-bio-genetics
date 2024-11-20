@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración - BioGenetics</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
-
     <header>
         <div class="logo-container">
             <img src="img/logo.png" alt="BioGenetics Logo">
@@ -25,15 +23,34 @@
     </header>
 
     <div class="container">
-        <div class="login-box">
-            <h2>AGREGAR OBRA SOCIAL</h2>
-            <p>Para agregar una obra social, ingrese el nombre de la misma</p>
-            <form action="../back-end/addObraSocial.php" method="POST">
-                <input type="text" name="nombre_obra_social" placeholder="Nombre de la Obra Social" required>
-                <button type="submit">Agregar</button>
-            </form>
+        <h1 class="admin-title">Funcionalidades Administrador</h1>
+        <div class="admin-options">
+            <div class="admin-option" onclick="location.href='agregarObra.html'">
+                <h2>Agregar Obra Social</h2>
+                <p>Incluir una nueva obra social en el sistema</p>
+            </div>
+            <div class="admin-option" onclick="location.href='removerObra.html'">
+                <h2>Remover Obra Social</h2>
+                <p>Eliminar una obra social existente</p>
+            </div>
+            <div class="admin-option" onclick="location.href='GestionTurnos.php'">
+                <h2>Gestión de Turnos</h2>
+                <p>Editar y cancelar turnos programados</p>
+            </div>
         </div>
     </div>
-<script src="scripts.js"></script>
+
+    <script>
+        document.querySelector('.user-icon').addEventListener('click', function() {
+            this.parentElement.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            const userMenu = document.querySelector('.user-menu');
+            if (!userMenu.contains(event.target)) {
+                userMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

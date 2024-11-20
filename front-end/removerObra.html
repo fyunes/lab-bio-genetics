@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Obra Social - BioGenetics</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #660066;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .container h2 {
+            color: #660066;
+            margin-bottom: 20px;
+        }
+
+        .obra-social-list {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .obra-social-item {
+            background-color: #7e7d7d;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .delete-btn {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .back-btn {
+            margin-top: 15px;
+            color: #660066;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .success {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .error {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Remover Obra Social</h2>
+        <div id="obrasSocialesList" class="obra-social-list">
+            <!-- Las obras sociales se cargarán dinámicamente con PHP -->
+        </div>
+        <a href="admin.html" class="back-btn">Volver al Panel de Administración</a>
+    </div>
+
+    <script>
+        // Script para cargar obras sociales y manejar eliminación
+        function cargarObrasSociales() {
+            fetch('../back-end/getObrasSociales.php')
+                .then(response => response.json())
+                .then(obrasSociales => {
+                    const lista = document.getElementById('obrasSocialesList');
+                    lista.innerHTML = ''; // Limpiar lista
+                    
+                    obrasSociales.forEach(obra => {
+                        const div = document.createElement('div');
+                        div.classList.add('obra-social-item');
+                        div.innerHTML = `
+                            <span>${obra.nombre}</span>
+                            <button onclick="eliminarObraSocial(${obra.id})" class="delete-btn">Eliminar</button>
+                        `;
+                        lista.appendChild(div);
+                    });
+                });
+        }
+
+        function eliminarObraSocial(id) {
+            fetch('../back-end/removeObraSocial.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `id=${id}`
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert(result);
+                cargarObrasSociales(); // Recargar lista
+            });
+        }
+
+        // Cargar obras sociales al iniciar
+        cargarObrasSociales();
+    </script>
+</body>
+</html>

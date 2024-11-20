@@ -8,6 +8,40 @@ body {
     overflow-x: hidden;
 }
 
+/* Estilos panel admin */
+
+.admin-title {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+  .admin-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.admin-option {
+    background-color: white;
+    color: #660066;
+    padding: 30px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.admin-option:hover {
+    transform: scale(1.05);
+}
+
+/**/
+
 .container {
     display: flex;
     flex-direction: column;
@@ -649,6 +683,5 @@ body {
     background-color: #832f8c;
   }
   
-
 
 
