@@ -43,13 +43,6 @@ $practica = mysqli_fetch_assoc($result);
     
     <main class="main-content">   
         <h1>Análisis Bioquímicos</h1>
-        
-        <?php if (isset($practica['Descripcion']) && !empty($practica['Descripcion'])): ?>
-        <div class="practice-description">
-            <p><?php echo htmlspecialchars($practica['Descripcion']); ?></p>
-        </div>
-        <?php endif; ?>
-
         <div class="form-container">
             <h2>Agende su turno</h2>
             <form id="appointment-form" method="POST" action="agendarTurno.php" enctype="multipart/form-data">
