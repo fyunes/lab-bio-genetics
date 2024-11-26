@@ -1,11 +1,11 @@
 CREATE DATABASE  IF NOT EXISTS `laboratorio_medico` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 USE `laboratorio_medico`;
 
--- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: laboratorio_medico
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.28-MariaDB
+-- Server version	5.5.5-10.4.32-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -63,7 +63,7 @@ CREATE TABLE `paciente` (
   `ObraSocial` varchar(100) DEFAULT NULL,
   `Num_afiliadoOS` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`ID_Paciente`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `paciente` (
 
 LOCK TABLES `paciente` WRITE;
 /*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
-INSERT INTO `paciente` VALUES (1,'Franco','Bacchiddu',NULL,NULL,'43235466','347664994','franbacchiddu@gmail.com','Franco',NULL,'1',NULL);
+INSERT INTO `paciente` VALUES (2,'cliente','lab',NULL,NULL,'1234568','12345689','cliente@gmail.com','cliente',NULL,'4',NULL);
 /*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +148,7 @@ CREATE TABLE `turno` (
   KEY `ID_Practica` (`ID_Practica`),
   CONSTRAINT `turno_ibfk_1` FOREIGN KEY (`ID_Paciente`) REFERENCES `paciente` (`ID_Paciente`),
   CONSTRAINT `turno_ibfk_2` FOREIGN KEY (`ID_Practica`) REFERENCES `practicas` (`ID_Practica`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,7 +157,7 @@ CREATE TABLE `turno` (
 
 LOCK TABLES `turno` WRITE;
 /*!40000 ALTER TABLE `turno` DISABLE KEYS */;
-INSERT INTO `turno` VALUES (1,'2024-11-28','Pendiente',1,6,'uploads/67422b1b396bc_1732389659.JPG'),(2,'2024-11-27','Pendiente',1,4,'uploads/67422b5240ef4_1732389714.JPG');
+INSERT INTO `turno` VALUES (3,'2024-11-29','Cancelado',2,2,'uploads/67452a8d6aa5b_1732586125.jpg');
 /*!40000 ALTER TABLE `turno` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,4 +204,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-23 16:46:28
+-- Dump completed on 2024-11-25 22:59:16
