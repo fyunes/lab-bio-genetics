@@ -10,7 +10,7 @@
 
 <header>
     <div class="logo-container">
-        <a href="loginUsuario.html">
+        <a href="index.html">
             <img src="img/logo.png" alt="BioGenetics Logo">
         </a>
         <span class="brand-name">BioGenetics</span>

@@ -103,33 +103,6 @@ INSERT INTO `practicas` VALUES (1,'Citogenética','Análisis de cromosomas para 
 UNLOCK TABLES;
 
 --
--- Table structure for table `resultados_paciente`
---
-
-DROP TABLE IF EXISTS `resultados_paciente`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `resultados_paciente` (
-  `ID_Practica` int(11) NOT NULL,
-  `ID_Paciente` int(11) NOT NULL,
-  `ResultadoPractica` text DEFAULT NULL,
-  PRIMARY KEY (`ID_Practica`,`ID_Paciente`),
-  KEY `ID_Paciente` (`ID_Paciente`),
-  CONSTRAINT `resultados_paciente_ibfk_1` FOREIGN KEY (`ID_Practica`) REFERENCES `practicas` (`ID_Practica`),
-  CONSTRAINT `resultados_paciente_ibfk_2` FOREIGN KEY (`ID_Paciente`) REFERENCES `paciente` (`ID_Paciente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `resultados_paciente`
---
-
-LOCK TABLES `resultados_paciente` WRITE;
-/*!40000 ALTER TABLE `resultados_paciente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `resultados_paciente` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `turno`
 --
 
@@ -204,4 +177,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-25 22:59:16
+-- Dump completed on 2024-11-28  0:08:00

@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Ejecutar la consulta y verificar si fue exitosa
     if (mysqli_query($conn, $sql)) {
-        echo "Obra social agregada con éxito";
+        header("Location: obraAgregadaExito.html");  
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

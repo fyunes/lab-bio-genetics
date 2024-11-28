@@ -92,7 +92,7 @@ $practica = $result->fetch_assoc();
             } else if (data.success) {
                 mensaje.innerHTML = `<div class="success">${data.success}</div>`;
                 setTimeout(() => {
-                    window.location.href = 'index.html';  
+                    window.location.href = 'turnoAgendadoExito.html';  
                 }, 2000);
             }
         })

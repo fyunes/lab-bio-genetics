@@ -26,6 +26,26 @@ function obtenerTurnos($conn) {
     return $result->fetch_all(MYSQLI_ASSOC);
 }
 
+// Nueva función para eliminar turno
+function eliminarTurno($conn, $turno_id) {
+    $delete_query = "DELETE FROM turno WHERE ID_Turno = ?";
+    $stmt = $conn->prepare($delete_query);
+    $stmt->bind_param("i", $turno_id);
+    
+    if ($stmt->execute()) {
+        return "Turno eliminado exitosamente";
+    } else {
+        return "Error al eliminar el turno";
+    }
+}
+
+// Manejo de eliminación de turno
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eliminar_turno'])) {
+    $turno_id = $_POST['turno_id'];
+    $mensaje = eliminarTurno($conn, $turno_id);
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cambiar_estado'])) {
     $turno_id = $_POST['turno_id'];
     $nuevo_estado = $_POST['nuevo_estado'];
@@ -66,6 +86,19 @@ $turnos = obtenerTurnos($conn);
             margin: 0;
             padding: 0;
         }
+
+        .btn-eliminar {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 3px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .btn-eliminar:hover {
+            background-color: #c82333;
+        }
+
         .container {
             max-width: 1200px;
             height: 200px;
@@ -146,11 +179,30 @@ $turnos = obtenerTurnos($conn);
         text-align: center;
         opacity: 1;  
        }
+
+       .btn {
+    display: inline-block;
+    background-color: #814b81;
+    color: white;
+    text-decoration: none;
+    padding: 20px 50px;
+    border-radius: 5px;
+    margin-bottom: 150px;
+    max-width: 120px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #660066;;
+}
+
     </style>
 
 </head>
 <body>
     <div class="container">
+        <a href="admin.html" class="btn">Volver al panel</a>
         <h1>Gestión de Turnos</h1>
         
         <?php if (isset($mensaje)): ?>
@@ -194,6 +246,10 @@ $turnos = obtenerTurnos($conn);
             <option value="Cancelado" <?php echo ($turno['Estado'] == 'Cancelado' ? 'selected' : ''); ?>>Cancelado</option>
         </select>
         <input type="submit" name="cambiar_estado" value="Actualizar">
+    </form>
+    <form method="POST" onsubmit="return confirm('¿Está seguro que desea eliminar este turno?');">
+        <input type="hidden" name="turno_id" value="<?php echo $turno['ID_Turno']; ?>">
+        <input type="submit" name="eliminar_turno" value="Eliminar" class="btn-eliminar">
     </form>
 </td>
                 </tr>
