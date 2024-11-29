@@ -1,0 +1,648 @@
+/* Estilos generales Index */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #660066;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-box {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #e0e0e0;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    outline: none;
+    border-color: #660066;
+}
+
+.forgot-password {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin: 10px 0;
+    text-align: right;
+}
+
+button {
+    background-color: #660066;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #540054;
+}
+
+.register-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+header {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 60px;
+    height: auto;
+}
+
+.brand-name {
+    font-size: 20px;
+    color: #660066;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #660066;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 30px;
+    }
+    
+    header img {
+        width: 50px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+    }
+
+    header nav a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-box {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header nav a {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .brand-name {
+        font-size: 16px;
+    }
+}
+
+/* Estilos para la página de recuperar contraseña */
+.forgot-password-box {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.forgot-password-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.forgot-password-box p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #e0e0e0;
+}
+
+input[type="email"]:focus {
+    outline: none;
+    border-color: #660066;
+}
+
+button {
+    background-color: #660066;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #540054;
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #660066;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilos generales Registro */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #660066;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-box {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.register-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los campos */
+}
+
+input[type="text"], input[type="tel"], input[type="email"], input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #e0e0e0;
+}
+
+input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, input[type="date"]:focus {
+    outline: none;
+    border-color: #660066;
+}
+
+button {
+    background-color: #660066;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #540054;
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+header {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 60px;
+    height: auto;
+}
+
+.brand-name {
+    font-size: 20px;
+    color: #660066;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #660066;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .register-box {
+        padding: 30px;
+    }
+    
+    header img {
+        width: 50px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+    }
+
+    header nav a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-box {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header nav a {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .brand-name {
+        font-size: 16px;
+    }
+}
+
+
+/* Estilos para la página de Turnos */
+
+.turnos-container {
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+}
+
+.turnos-container h1 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.turnos-container p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.turno-opciones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.opcion {
+    flex: 1;
+    max-width: 250px;
+}
+
+.opcion-caja {
+    background-color: white;
+    color: #660066;
+    padding: 30px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opcion-caja:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Estilo Responsive */
+@media (max-width: 768px) {
+    .turno-opciones {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opcion {
+        max-width: 100%;
+    }
+}
+
+/* Estilos para el contenedor del menú desplegable */
+.user-menu {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.user-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Estilo del menú desplegable */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: #660066;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mostrar el menú cuando esté activo */
+.user-menu.active .dropdown-menu {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dropdown-menu a {
+        font-size: 14px;
+    }
+}
+
+/* Estilo Pantalla alta complejidad */
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+
+header {
+        width: 100%;
+        padding: 5px 10px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+    }
+
+
+.logo {
+    height: 50px;
+}
+
+.user-icon {
+    font-size: 24px;
+}
+
+.main-content {
+    text-align: center;
+
+}
+
+.main-content h1 {
+    font-size: 36px;
+    color: #ffffff;
+    background-color: #660066;
+
+}
+
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    margin-top: 1px;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#upload-btn {
+    background-color: #540054;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#upload-btn:hover {
+    background-color: #540054;
+}
+
+.btn {
+    width: 100%;
+    background-color: #540054;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #540054;
+}
+
+/* Opciones */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #660066
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .profile-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .main-section {
+    text-align: center;
+    background-color: #660066;
+    color: white;
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    margin: 10px 0;
+  }
+  
+  .practices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .option {
+    background-color: black;
+    color: #fff;
+    margin: 10px;
+    padding: 15px 20px;
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .option:hover {
+    background-color: #832f8c;
+  }
+  
+  .selected {
+    background-color: #832f8c;
+  }
+  
+
+
+
