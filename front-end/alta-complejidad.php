@@ -63,7 +63,11 @@ $practica = $result->fetch_assoc();
                 </div>
                 
                 <div class="form-group file-upload">
-                    <label for="orden_medica">Orden Médica (PDF, JPG o PNG):</label>
+                <label for="orden_medica" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; text-align: center; margin-bottom: 15px;">
+   Adjuntar Orden Médica (PDF, JPG o PNG)
+</label>
+
+
                     <input type="file" id="orden_medica" name="orden_medica" 
                            accept=".pdf,.jpg,.png" required>
                 </div>

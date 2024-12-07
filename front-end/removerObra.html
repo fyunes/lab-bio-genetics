@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remover Obra Social - BioGenetics</title>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         body {
             margin: 0;
@@ -84,7 +88,7 @@
     <div class="container">
         <h2>Remover Obra Social</h2>
         <div id="obrasSocialesList" class="obra-social-list">
-            <!-- Las obras sociales se cargarán dinámicamente con PHP -->
+           
         </div>
         <a href="admin.html" class="back-btn">Volver al Panel de Administración</a>
     </div>
@@ -118,14 +122,36 @@
                 },
                 body: `id=${id}`
             })
-            .then(response => response.text())
+            .then(response => response.json())  // Parseamos la respuesta JSON
             .then(result => {
-                alert(result);
-                cargarObrasSociales(); // Recargar lista
+                // Usamos SweetAlert en lugar de alert()
+                if (result.status === 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: result.message,
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(() => {
+                        cargarObrasSociales(); // Recargar lista de obras sociales
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: result.message,
+                        showConfirmButton: true
+                    });
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Hubo un error al procesar la solicitud',
+                    showConfirmButton: true
+                });
             });
         }
 
-        // Cargar obras sociales al iniciar
+        
         cargarObrasSociales();
     </script>
 </body>

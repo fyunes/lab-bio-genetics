@@ -119,7 +119,7 @@ $practica = mysqli_fetch_assoc($result);
                 document.getElementById('appointment-form').reset();
                 document.querySelector('button[type="submit"]').disabled = true;
                 setTimeout(() => {
-                    window.location.href = 'index.html';
+                    window.location.href = 'turnoAgendadoExito.html';
                 }, 2000);
             }
         })
