@@ -21,19 +21,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    // Verificar si el correo ya está registrado
-    $query = "SELECT * FROM usuarios WHERE email = ?";
+    // Verificar si el correo o DNI ya están registrados
+    $query = "SELECT * FROM usuarios WHERE email = ? OR dni = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("s", $email);
+    $stmt->bind_param("ss", $email, $dni);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // El correo ya está registrado
-        $_SESSION['error'] = "El correo ya está registrado. Intente con otro.";
-        header("Location: ../front-end/register.html?error=email_exists");
-        exit();
-    } else {
+        // Verificar específicamente qué campo ya existe
+        $row = $result->fetch_assoc();
+        if ($row['email'] == $email) {
+            die("Error: El correo electrónico ya está registrado.");
+        }
+        if ($row['dni'] == $dni) {
+            die("Error: El DNI ya está registrado.");
+        }
+    }
+    
+     else {
         // Encriptar la contraseña
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
